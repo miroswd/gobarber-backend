@@ -15,4 +15,5 @@ Padronizado com:
 
 Libs utilizadas:
 * uuidv4 => para gerar id
+* typeorm => mapeamento dos objetos para o banco de dados
 * date-fns => fazer a tratativa de datas/horários
