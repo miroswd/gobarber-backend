@@ -2,23 +2,23 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'; // entidade: a
 
 // PrimaryGeneratedColumn -> para gerar um id
 
-@Entity('appointments') // Passando a classe como parâmentro para a entidade
+@Entity('appointments') // Enviando a classe por parâmentro para o Entity
 class Appointment {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column() // por padrão é varchar
+  @Column('varchar')
   provider: string;
 
-  @Column('time with time zone')
+  @Column('timestamp with time zone')
   date: Date;
-
-  /* Removendo o constructor, pois será inicializado através do typeorm */
-  // constructor({ provider, date }: Omit<Appointment, 'id'>) {
-  //   this.id = uuid();
-  //   this.provider = provider;
-  //   this.date = date;
-  // }
 }
+
+/* Removendo o constructor, pois será inicializado através do typeorm */
+// constructor({ provider, date }: Omit<Appointment, 'id'>) {
+//   this.id = uuid();
+//   this.provider = provider;
+//   this.date = date;
+// }
 
 export default Appointment;
