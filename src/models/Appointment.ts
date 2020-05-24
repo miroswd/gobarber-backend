@@ -1,4 +1,14 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'; // entidade: algo q vai ser salvo no banco de dados
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+  CreateDateColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm'; // entidade: algo q vai ser salvo no banco de dados
+
+import User from './User';
 
 // PrimaryGeneratedColumn -> para gerar um id
 
@@ -8,10 +18,20 @@ class Appointment {
   id: string;
 
   @Column('varchar')
-  provider: string;
+  provider_id: string;
 
   @Column('timestamp with time zone')
   date: Date;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'provider_id' })
+  provider: User;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
 
 /* Removendo o constructor, pois será inicializado através do typeorm */
