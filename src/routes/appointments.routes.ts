@@ -5,8 +5,12 @@ import { getCustomRepository } from 'typeorm';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 import CreateAppointmentService from '../services/CreateAppointmentService';
 
+// Middleware
+import ensureAutheticated from '../middlewares/ensureAuthenticated';
+
 const appointmentsRouter = Router();
 
+appointmentsRouter.use(ensureAutheticated); // Todas as rotas de appointments precisam de autenticação
 // interface Appointment {
 //   id: string;
 //   provider: string;
