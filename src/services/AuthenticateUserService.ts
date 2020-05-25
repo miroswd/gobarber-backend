@@ -17,7 +17,6 @@ interface Response {
 class AuthenticateUserService {
   public async execute({ email, password }: Request): Promise<Response> {
     const userRepository = getRepository(User);
-
     const user = await userRepository.findOne({ where: { email } });
 
     if (!user) {
