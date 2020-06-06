@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm'; // entidade: algo q vai ser salvo no banco de dados
 
-import User from './User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 // PrimaryGeneratedColumn -> para gerar um id
 
