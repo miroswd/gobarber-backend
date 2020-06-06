@@ -1,7 +1,7 @@
 import { Router } from 'express';
 // import { uuid } from 'uuidv4';
 import { parseISO } from 'date-fns';
-import AppointmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepository';
+import { container } from 'tsyringe';
 import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
 
 // Middleware
@@ -23,14 +23,10 @@ appointmentsRouter.use(ensureAutheticated); // Todas as rotas de appointments pr
 
 // http://localhost:3333/appointments == '/' # /appointments foi definido como use
 appointmentsRouter.post('/', async (request, response) => {
-  const appointmentsRepository = new AppointmentsRepository();
-
   const { provider_id, date } = request.body;
 
   const parsedDate = parseISO(date); // Formatando data
-  const createAppointment = new CreateAppointmentService(
-    appointmentsRepository,
-  );
+  const createAppointment = container.resolve(CreateAppointmentService);
 
   const appointment = await createAppointment.execute({
     provider_id,
