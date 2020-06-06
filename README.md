@@ -21,3 +21,4 @@ Libs utilizadas:
 * typeorm => mapeamento dos objetos para o banco de dados
 * date-fns => fazer a tratativa de datas/horários
 * multer => Upload de arquivos
+* tsyringe => Injeção de dependências
