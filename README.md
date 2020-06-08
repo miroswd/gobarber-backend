@@ -4,7 +4,7 @@
 <a href="https://insomnia.rest/run/?label=&uri=https%3A%2F%2Fgithub.com%2Fmiroswd%2FfirstProject%2Fblob%2Fmaster%2Fassets%2Froutes-gostack-gobarber.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
-<p align="center">Construindo a parte de agendamentos da aplicação 'GoBarber'. Utilizando Node.JS e TypeScript para desenvolver o back-end.</p>
+<p align="center">Construindo o back end da aplicação 'GoBarber'.</p>
 
 </br>
 
