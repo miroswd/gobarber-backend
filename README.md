@@ -7,9 +7,11 @@
 <p align="center">Construindo a parte de agendamentos da aplicação 'GoBarber'. Utilizando Node.JS e TypeScript para desenvolver o back-end.</p>
 
 </br>
+
 ```bash
 docker run --name gobarber -e POSTGRES_PASSWORD=suasenha -p 5432:5432 -d postgres # Caso a porta 5432 esteja ocupada, modificar de 5432:5432 para 5433:5432
 ```
+
 - Criar uma database chamada <b>gostack_gobarber</b> 
 - Rodar as migrations
 
