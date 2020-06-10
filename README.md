@@ -43,3 +43,4 @@ Libs utilizadas:
 * multer => Upload de arquivos
 * tsyringe => Injeção de dependências
 * Jest => Criação de testes automatizados
+* Handlebars => Template Engine
